@@ -35,19 +35,22 @@ body {
     gap: 10px;
 }
 
-.nav-library i, .nav-library p {
+.nav-library i,
+.nav-library p {
     color: #b7b3b6;
     font-size: 14px;
     cursor: pointer;
 }
 
-.nav-playlist, .nav-podcast {
+.nav-playlist,
+.nav-podcast {
     background-color: #242424;
     padding: 16px;
     border-radius: 8px
 }
 
-.nav-playlist button, .nav-podcast button {
+.nav-playlist button,
+.nav-podcast button {
     background-color: #fff;
     color: #000;
     border: none;
@@ -58,7 +61,8 @@ body {
     border-radius: 20px;
 }
 
-.nav-playlist p, .nav-podcast p {
+.nav-playlist p,
+.nav-podcast p {
     font-size: 12px;
 }
 
@@ -111,14 +115,16 @@ main {
     outline: none;
 }
 
-.artists-grid, .albums-grid {
+.artists-grid,
+.albums-grid {
     display: grid;
     grid-template-columns: repeat(auto-Fill, minmax(180px, 1fr));
     gap: 24px;
     margin-bottom: 40px;
 }
 
-.artist-card, .album-card {
+.artist-card,
+.album-card {
     background-color: #181818;
     padding: 15px;
     border-radius: 8px;
@@ -129,7 +135,8 @@ main {
     justify-content: space-evenly;
 }
 
-.artist-card:hover, .album-card:hover {
+.artist-card:hover,
+.album-card:hover {
     background-color: #282828;
 }
 
@@ -144,11 +151,13 @@ main {
     width: 100%;
 }
 
-.artist-card h3, .album-card h3 {
+.artist-card h3,
+.album-card h3 {
     font-size: 12px;
 }
 
-.artist-card p, .album-card p {
+.artist-card p,
+.album-card p {
     font-size: 10px;
     color: #b7b3b6;
 }
@@ -193,4 +202,81 @@ main {
 .banner button:hover {
     background-color: #b7b3b6;
     transition: 0.5s;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* Sidebar vira topo */
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .nav-library,
+    .nav-playlist,
+    .nav-podcast,
+    .nav-footer,
+    .nav-language-button {
+        display: none;
+    }
+
+    .logo i {
+        font-size: 28px;
+    }
+
+    main {
+        padding: 16px;
+        margin-bottom: 100px;
+        /* espaço pro banner */
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .artists-grid,
+    .albums-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 16px;
+    }
+
+    .artist-card img {
+        border-radius: 50%;
+    }
+
+    .banner {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .banner button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .search-bar {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .artists-grid,
+    .albums-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
 }
